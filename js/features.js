@@ -153,7 +153,7 @@ function CopyPin() {
 function ChangeLanguage() {
   if (langHolder.innerHTML == "fa") {
     langHolder.innerHTML = "en";
-    head1.innerHTML = "ایجاد پین امن برای کارت اعتباری";
+    head1.innerHTML = "ایجاد پین امن برای کارت اعتباری توسط هوش مصنوعی";
     head2.innerHTML =
       "با ایجاد پین‌های معتبر برای کارت اعتباری به راحتی، امنیت مالی خود را تضمین کنید";
     desc1.style.textAlign = "right";
@@ -164,7 +164,7 @@ function ChangeLanguage() {
       "با استفاده از این وب‌سایت، می‌توانید به راحتی و با اطمینان پین‌های امن و معتبر برای کارت‌های اعتباری خود تولید کنید. امنیت مالی یک نگرانی حیاتی است که همیشه باید مورد توجه باشد، و استفاده از این سرویس می‌تواند به اطمینان از معاملات مالی شما کمک کند. با استفاده از روش‌های قوی و مدرن ارائه شده توسط این سایت، شما می‌توانید از حفظ امنیت و اعتماد در تمامی معاملات مالی خود لذت ببرید.";
   } else if (langHolder.innerHTML == "en") {
     langHolder.innerHTML = "fa";
-    head1.innerHTML = "Generate Safe PIN for Credit Card";
+    head1.innerHTML = "Generate Secure PIN for Credit Card With AI/ML";
     head2.innerHTML =
       "Ensure your financial security by creating valid credit card PINs effortlessly";
     desc1.style.textAlign = "left";
