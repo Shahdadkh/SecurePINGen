@@ -1,0 +1,157 @@
+@import "variable";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $primary-background;
+}
+
+#head {
+  width: 100%;
+  height: 120px;
+  background-color: $primary-color;
+  overflow: hidden;
+  position: relative;
+
+  .headText {
+    color: $text-light;
+    text-align: center;
+    margin: 20px 0 0;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  span {
+    color: $text-light;
+    text-align: center;
+    margin: 5px 0 0;
+    font-weight: 100;
+    display: block;
+    font-size: 20px;
+  }
+
+  .github {
+    width: 80px;
+    position: absolute;
+    right: 0;
+  }
+}
+
+#language {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  background-color: $primary-background;
+  padding: 2px 6px;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+}
+
+#code {
+  width: 600px;
+  height: auto;
+  border: $border-transparent;
+  margin: 30px auto 0;
+
+  .pin {
+    width: 400px;
+    height: 100px;
+    border: $border-transparent;
+    background-color: $secondary-background;
+    margin: 30px auto 0;
+    border-radius: 20px;
+    @include flex_custom;
+  }
+
+  .btn {
+    width: 430px;
+    height: 80px;
+    margin: 15px auto;
+    @include flex_custom;
+
+    .generate {
+      @include btn-custom(200, 55, 10);
+      background-color: $primary-color;
+      @include flex_custom;
+      color: #ffffff;
+      font-size: 20px;
+    }
+  }
+}
+
+#text {
+  color: $text-dark;
+  font-size: 45px;
+}
+
+#copy {
+  @include btn-custom(200, 55, 10);
+  background-color: $secondary-color;
+  @include flex_custom;
+  color: $text-dark;
+  font-size: 20px;
+}
+
+#foot {
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+  border: $border-transparent;
+  overflow: hidden;
+  color: #445361;
+
+  p {
+    text-align: justify;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  body {
+    width: 100%;
+  }
+
+  #head {
+    .headText {
+      margin-top: 30px;
+      font-size: 20px;
+      margin: 20px 20px 0;
+    }
+
+    span {
+      font-size: 14px;
+      margin: 5px 20px 0;
+    }
+
+    .github {
+      width: 60px;
+    }
+  }
+
+  #code {
+    width: 100%;
+    height: auto;
+
+    .pin {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .btn {
+      margin: 0 auto;
+      width: 90%;
+
+      .generate {
+        width: 150px;
+      }
+    }
+  }
+
+  #copy {
+    width: 150px;
+  }
+
+  #foot {
+    margin: 0 auto;
+    width: 92%;
+  }
+}

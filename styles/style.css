@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+#head {
+  width: 100%;
+  height: 120px;
+  background-color: rgb(0, 68, 136);
+  overflow: hidden;
+  position: relative;
+}
+#head .headText {
+  color: #ffffff;
+  text-align: center;
+  margin: 20px 0 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+#head span {
+  color: #ffffff;
+  text-align: center;
+  margin: 5px 0 0;
+  font-weight: 100;
+  display: block;
+  font-size: 20px;
+}
+#head .github {
+  width: 80px;
+  position: absolute;
+  right: 0;
+}
+
+#language {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  background-color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+}
+
+#code {
+  width: 600px;
+  height: auto;
+  border: 1px transparent solid;
+  margin: 30px auto 0;
+}
+#code .pin {
+  width: 400px;
+  height: 100px;
+  border: 1px transparent solid;
+  background-color: rgba(194, 197, 204, 0.7);
+  margin: 30px auto 0;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#code .btn {
+  width: 430px;
+  height: 80px;
+  margin: 15px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#code .btn .generate {
+  width: 200px;
+  height: 55px;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: rgb(0, 68, 136);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+#text {
+  color: rgb(16, 16, 16);
+  font-size: 45px;
+}
+
+#copy {
+  width: 200px;
+  height: 55px;
+  border-radius: 10px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: rgba(238, 210, 2, 0.8);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: rgb(16, 16, 16);
+  font-size: 20px;
+}
+
+#foot {
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+  border: 1px transparent solid;
+  overflow: hidden;
+  color: #445361;
+}
+#foot p {
+  text-align: justify;
+}
+
+@media screen and (max-width: 512px) {
+  body {
+    width: 100%;
+  }
+  #head .headText {
+    margin-top: 30px;
+    font-size: 20px;
+    margin: 20px 20px 0;
+  }
+  #head span {
+    font-size: 14px;
+    margin: 5px 20px 0;
+  }
+  #head .github {
+    width: 60px;
+  }
+  #code {
+    width: 100%;
+    height: auto;
+  }
+  #code .pin {
+    width: 90%;
+    margin: 0 auto;
+  }
+  #code .btn {
+    margin: 0 auto;
+    width: 90%;
+  }
+  #code .btn .generate {
+    width: 150px;
+  }
+  #copy {
+    width: 150px;
+  }
+  #foot {
+    margin: 0 auto;
+    width: 92%;
+  }
+}/*# sourceMappingURL=style.css.map */

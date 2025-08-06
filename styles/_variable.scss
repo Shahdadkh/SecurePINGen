@@ -1,0 +1,21 @@
+$border-transparent: 1px transparent solid;
+$primary-background: #ffffff;
+$secondary-background: rgba(194, 197, 204, 0.7);
+$primary-color: rgba(0, 68, 136, 1);
+$secondary-color: rgba(238, 210, 2, 0.8);
+$text-light: #ffffff;
+$text-dark: rgba(16, 16, 16, 1);
+
+@mixin flex_custom {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+@mixin btn-custom($width, $height, $radius) {
+  width: $width + px;
+  height: $height + px;
+  border-radius: $radius + px;
+  display: inline-block;
+  cursor: pointer;
+}
