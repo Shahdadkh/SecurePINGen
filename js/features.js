@@ -111,7 +111,7 @@ async function runONNX() {
 
     while (true) {
       const num = getRandomInt(1000, 9999);
-      const num_list = analyzeNumberBinary(num); // این تابع باید آرایه عددی 10 عنصری بسازد
+      const num_list = analyzeNumberBinary(num);
       const inputTensor = new ort.Tensor(
         "float32",
         new Float32Array(num_list),
