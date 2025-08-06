@@ -31,7 +31,7 @@
             </div>
             <div class="btn">
                 <div id="copy" onclick="CopyPin()">Copy</div>
-                <div class="generate" onclick="GenerateCode()">Generate PIN</div>
+                <div class="generate" onclick="runONNX()">Generate PIN</div>
             </div>
         </div>
     </section>
@@ -48,6 +48,15 @@
     <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
 
     <script>
+        let pinHolder = document.getElementById("text");
+        let copyHolder = document.getElementById("copy");
+        let langHolder = document.getElementById("language");
+
+        let head1 = document.getElementById("headOne");
+        let head2 = document.getElementById("headTwo");
+        let desc1 = document.getElementById("descOne");
+        let desc2 = document.getElementById("descTwo");
+
         function get_pos(digit) {
             const positions = {
                 1: [0, 0], 2: [1, 0], 3: [2, 0],
@@ -156,8 +165,7 @@
 
                     const predictedLabel = Number(labelTensor.data[0]);
                     if (predictedLabel > 3) {
-                        console.log('Predicted label as Number:', predictedLabel);
-                        console.log('number: ', num)
+                        pinHolder.innerHTML = num;
                         break;
                     }
                 }
@@ -168,6 +176,43 @@
         }
 
         runONNX();
+
+        function CopyPin() {
+            if (pinHolder.innerHTML != "----") {
+                pinHolder.focus();
+                navigator.clipboard.writeText(pinHolder.innerHTML);
+
+                copyHolder.innerHTML = "Copied!"
+
+                setTimeout(
+                    function () {
+                        copyHolder.innerHTML = "Copy"
+                    }, 3000)
+            }
+        }
+
+        function ChangeLanguage() {
+            if (langHolder.innerHTML == "fa") {
+                langHolder.innerHTML = "en"
+                head1.innerHTML = "ایجاد پین امن برای کارت اعتباری"
+                head2.innerHTML = "با ایجاد پین‌های معتبر برای کارت اعتباری به راحتی، امنیت مالی خود را تضمین کنید"
+                desc1.style.textAlign = "right";
+                desc1.innerHTML = "چرا باید از این وب‌سایت استفاده کنیم؟"
+                desc2.style.direction = "rtl"
+                desc2.style.textAlign = "justify"
+                desc2.innerHTML = "با استفاده از این وب‌سایت، می‌توانید به راحتی و با اطمینان پین‌های امن و معتبر برای کارت‌های اعتباری خود تولید کنید. امنیت مالی یک نگرانی حیاتی است که همیشه باید مورد توجه باشد، و استفاده از این سرویس می‌تواند به اطمینان از معاملات مالی شما کمک کند. با استفاده از روش‌های قوی و مدرن ارائه شده توسط این سایت، شما می‌توانید از حفظ امنیت و اعتماد در تمامی معاملات مالی خود لذت ببرید."
+            } else if (langHolder.innerHTML == "en") {
+                langHolder.innerHTML = "fa"
+                head1.innerHTML = "Generate Safe PIN for Credit Card"
+                head2.innerHTML = "Ensure your financial security by creating valid credit card PINs effortlessly"
+                desc1.style.textAlign = "left";
+                desc1.innerHTML = "Why should we use this website?"
+                desc2.style.direction = "ltr"
+                desc2.style.textAlign = "justify"
+                desc2.innerHTML = "By using this website, you can easily and confidently generate secure and valid PINs for your credit cards. Financial security is a vital concern that should always be addressed, and utilizing this service can help ensure confidence in your financial transactions. With the robust and modern methods provided by this site, you can enjoy the preservation of security and trust in all your financial transactions."
+            }
+        }
+
     </script>
 </body>
 
